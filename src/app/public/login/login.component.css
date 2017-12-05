@@ -1,0 +1,19 @@
+body{
+    background-color: #EEEEEE;
+}
+
+.login-card {
+    width: 400px;
+    display: block;
+    margin: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .logo {
+      display: block;
+      margin: auto;
+      width: 60%;
+  }
