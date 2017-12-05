@@ -1,3 +1,4 @@
+import { AuthGuardService } from './services/auth-guard.service';
 import { AppRoutesModule } from './app-routes.module';
 import { MaterialModule } from './material.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,14 +11,26 @@ import { LoginComponent } from './public/login/login.component';
 import { FormsModule } from '@angular/forms';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+import { TrainerFormComponent } from './secure/trainer/trainer-form/trainer-form.component';
+
 import 'hammerjs';
+import { TrainerHomeComponent } from './secure/trainer/trainer-home/trainer-home.component';
+import { TrainerDetailsComponent } from './secure/trainer/trainer-details/trainer-details.component';
+import { TrainerScheduleComponent } from './secure/trainer/trainer-schedule/trainer-schedule.component';
+import { TrainerClientsListComponent } from './secure/trainer/trainer-clients-list/trainer-clients-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PublicComponent,
     SecureComponent,
-    LoginComponent
+    LoginComponent,
+    TrainerFormComponent,
+    TrainerHomeComponent,
+    TrainerDetailsComponent,
+    TrainerScheduleComponent,
+    TrainerClientsListComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +42,9 @@ import 'hammerjs';
     
     
   ],
-  providers: [],
+  providers: [
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

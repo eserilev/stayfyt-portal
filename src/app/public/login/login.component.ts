@@ -29,7 +29,7 @@ export class LoginComponent {
 
   loginUser() {
     console.log(this.formModel.username);    
-   // this.router.navigateByUrl('\provider');  
+    this.router.navigateByUrl('/trainer');  
   }
   
   getErrorMessage() {

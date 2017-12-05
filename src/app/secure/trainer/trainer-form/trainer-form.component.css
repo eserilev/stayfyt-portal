@@ -1,0 +1,13 @@
+body{
+    background-color: #EEEEEE;
+}
+
+mat-card {
+    width: 400px;
+    display: block;
+    margin: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
