@@ -27,6 +27,7 @@ import { TrainerRequestListComponent } from './secure/trainer/trainer-request-li
 //common (move this to seperate module)
 import { DayScheduleComponent } from './secure/common/day-schedule/day-schedule.component';
 import { FeedComponent } from './secure/common/feed/feed.component';
+import { MessageListComponent } from './secure/common/message-list/message-list.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { FeedComponent } from './secure/common/feed/feed.component';
     TrainerClientsListComponent,
     TrainerRequestListComponent,
     DayScheduleComponent,
-    FeedComponent
+    FeedComponent,
+    MessageListComponent
   ],
   imports: [
     BrowserModule,
