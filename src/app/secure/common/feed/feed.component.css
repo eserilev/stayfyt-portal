@@ -1,0 +1,21 @@
+.example-card {
+    width: 75%;
+    padding-top:25px;
+    margin-top:25px;
+}
+  
+.example-header-image {
+background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+background-size: cover;
+}
+
+.feed-image
+{
+    max-width: 80%;
+
+}
+
+.feed-content
+{
+    width:80%;
+}
