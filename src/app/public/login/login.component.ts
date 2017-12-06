@@ -21,7 +21,7 @@ export class LoginComponent {
   }
 
 
-  constructor( _router: Router, ) 
+  constructor(private _router: Router, ) 
   {
     this.router = _router;
     

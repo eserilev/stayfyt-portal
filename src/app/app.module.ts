@@ -19,6 +19,7 @@ import { TrainerHomeComponent } from './secure/trainer/trainer-home/trainer-home
 import { TrainerDetailsComponent } from './secure/trainer/trainer-details/trainer-details.component';
 import { TrainerScheduleComponent } from './secure/trainer/trainer-schedule/trainer-schedule.component';
 import { TrainerClientsListComponent } from './secure/trainer/trainer-clients-list/trainer-clients-list.component';
+import { DayScheduleComponent } from './secure/common/day-schedule/day-schedule.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TrainerClientsListComponent } from './secure/trainer/trainer-clients-li
     TrainerHomeComponent,
     TrainerDetailsComponent,
     TrainerScheduleComponent,
-    TrainerClientsListComponent
+    TrainerClientsListComponent,
+    DayScheduleComponent
   ],
   imports: [
     BrowserModule,
