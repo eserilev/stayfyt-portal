@@ -20,11 +20,6 @@ export class GeolocationService {
   {
     navigator.geolocation.getCurrentPosition(position => {     
       this.coords = position.coords;
-      console.log(this.coords);
-      
-     
-     
-
     }, (error) => {
       this.coords = null;
       console.log(error);
@@ -43,24 +38,30 @@ export class GeolocationService {
     return this.coords;
   }
 
-  // Set autocomplete to textinput
+  // Set autocomplete feature to textinput
   // Bias the autocomplete object to the user's geographical location,
   // as supplied by the browser's 'navigator.geolocation' object.
   public autoFillAddress(textInputId: HTMLElement) {
+    navigator.geolocation.getCurrentPosition(position => {     
+      this.coords = position.coords;
+      this.autocomplete = new google.maps.places.Autocomplete(textInputId, this.autocompleteOptions);
 
-    
-    this.autocomplete = new google.maps.places.Autocomplete(textInputId, this.autocompleteOptions);
+      var geolocation = {
+        lat: this.coords.latitude,
+        lng: this.coords.longitude,
+      };
+      var circle = new google.maps.Circle({
+        center: geolocation,
+        radius: this.coords.accuracy
+      });
 
-    var geolocation = {
-      lat: this.coords.latitude,
-      lng: this.coords.longitude,
-    };
-    var circle = new google.maps.Circle({
-      center: this.coords,
-      radius: this.coords.accuracy
+      this.autocomplete.setBounds(circle.getBounds());
+
+    }, (error) => {
+      this.coords = null;
+      console.log(error);
     });
-    this.autocomplete.setBounds(circle.getBounds());
-   // this.autocomplete = new google.maps.places.Autocomplete(input, options);
+
   }
 
   
