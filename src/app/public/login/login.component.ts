@@ -32,6 +32,11 @@ export class LoginComponent {
     this.router.navigateByUrl('/trainer');  
   }
   
+  registerUser() {
+    this.router.navigateByUrl('/register');
+    
+  }
+  
   getErrorMessage() {
     return this.form.hasError('required') ? 'You must enter a username' :
         this.form.hasError('email') ? 'Not a valid username' :

@@ -1,0 +1,17 @@
+.register-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-container > * {
+  width: 500px;
+}
+.register-card {
+    width: 500px;
+    display: block;
+    margin: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

@@ -1,7 +1,6 @@
 <mat-card class="login-card">
   <div class = "logo">
-    place logo here
-   <!-- <img mat-card-image src="">-->
+    <img mat-card-image src="assets/images/stayfyt_logo.png">
   </div>
   
   <form (ngSubmit)="loginUser()">
@@ -31,7 +30,7 @@
     </mat-card-content>
     <mat-card-actions>
         <button mat-raised-button color="primary" type="submit">Login</button>
-        <button mat-raised-button>Register</button>
+        <button mat-raised-button (click)="registerUser()" >Register </button>
     </mat-card-actions>
   </form>
 </mat-card>
