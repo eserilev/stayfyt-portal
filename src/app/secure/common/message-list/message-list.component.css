@@ -1,3 +1,7 @@
+.mat-list-item:hover{
+    background-color: lightgrey;
+}
+
 .feed-header-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;

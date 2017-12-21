@@ -1,13 +1,55 @@
-<div style="background-color:#F9F4ED; width:100%; height:75px; margin-bottom:5px; ">
-    
-    
+<div style="width:100%; height:50px;">
+  <div style="float:left;">
+
+  </div>
+  <div style="float:right">
+    <button mat-icon-button>
+        <div mat-card-avatar style="background-size:cover">
+            <mat-icon>home</mat-icon>
+        </div>
+    </button>
+      
+
+    <button mat-icon-button [matMenuTriggerFor]="messageMenu">
+      <div mat-card-avatar style="background-size:cover">
+        <mat-icon>message</mat-icon>
+      </div>
+    </button>
+    <mat-menu #messageMenu="matMenu">
+      <message-list></message-list>
+    </mat-menu>
+
+
+    <button mat-icon-button [matMenuTriggerFor]="userMenu">
+      <div mat-card-avatar class="feed-header-image"></div>
+    </button>
+      
+    <mat-menu #userMenu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>view_compact</mat-icon>
+        <span>View Profile</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>Settings</span>
+      </button>        
+      <button mat-menu-item>
+        <mat-icon>vpn_keyg</mat-icon>
+        <span>Log Out</span>
+      </button>
+    </mat-menu>
+  </div>
+  <div style="float:left">
+    StayFyt Logo
+  </div>
 </div>
+<mat-divider style="padding: 0px; margin:0px"></mat-divider>
     
 
 
 
 <div align="center">
-  <div style="width: 75%">
+  <div style="width: 75%; margin-top:25px;">
     <router-outlet></router-outlet>
   </div>
 </div>

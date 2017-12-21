@@ -12,8 +12,6 @@ import { LoginComponent } from './public/login/login.component';
 import { FormsModule } from '@angular/forms';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
-
 import 'hammerjs';
 
 //trainer (move this to seperate module)
@@ -23,11 +21,16 @@ import { TrainerDetailsComponent } from './secure/trainer/trainer-details/traine
 import { TrainerScheduleComponent } from './secure/trainer/trainer-schedule/trainer-schedule.component';
 import { TrainerClientsListComponent } from './secure/trainer/trainer-clients-list/trainer-clients-list.component';
 import { TrainerRequestListComponent } from './secure/trainer/trainer-request-list/trainer-request-list.component';
+import { TrainerProfileComponent } from './secure/trainer/trainer-profile/trainer-profile.component';
 
 //common (move this to seperate module)
 import { DayScheduleComponent } from './secure/common/day-schedule/day-schedule.component';
 import { FeedComponent } from './secure/common/feed/feed.component';
+
 import { RegisterComponent } from './public/register/register.component';
+
+import { MessageListComponent } from './secure/common/message-list/message-list.component';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +46,11 @@ import { RegisterComponent } from './public/register/register.component';
     TrainerRequestListComponent,
     DayScheduleComponent,
     FeedComponent,
-    RegisterComponent
+    RegisterComponent,
+    MessageListComponent,
+    TrainerProfileComponent,
+    MessageListComponent,
+    TrainerProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -51,9 +58,10 @@ import { RegisterComponent } from './public/register/register.component';
     AppRoutesModule,
     FormsModule,
     BrowserAnimationsModule
-    
-    
-    
+
+
+
+
   ],
   providers: [
     AuthGuardService
