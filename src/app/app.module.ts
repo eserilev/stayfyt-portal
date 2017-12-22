@@ -1,4 +1,6 @@
 
+import { GeolocationService } from './services/geolocation.service';
+
 import { AuthGuardService } from './services/auth-guard.service';
 import { AppRoutesModule } from './app-routes.module';
 import { MaterialModule } from './material.module';
@@ -28,8 +30,13 @@ import { DayScheduleComponent } from './secure/common/day-schedule/day-schedule.
 import { FeedComponent } from './secure/common/feed/feed.component';
 
 import { RegisterComponent } from './public/register/register.component';
-
 import { MessageListComponent } from './secure/common/message-list/message-list.component';
+
+//client (move this to seperate module)
+import { ClientComponent } from './secure/client/client.component';
+import { ClientSearchTrainerComponent } from './secure/client/client-search-trainer/client-search-trainer.component';
+import { ClientProfileComponent } from './secure/client/client-profile/client-profile.component';
+import { ClientTrainerListComponent } from './secure/client/client-trainer-list/client-trainer-list.component';
 
 
 @NgModule({
@@ -50,7 +57,11 @@ import { MessageListComponent } from './secure/common/message-list/message-list.
     MessageListComponent,
     TrainerProfileComponent,
     MessageListComponent,
-    TrainerProfileComponent
+    TrainerProfileComponent,
+    ClientProfileComponent,
+    ClientComponent,
+    ClientSearchTrainerComponent,
+    ClientTrainerListComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +75,8 @@ import { MessageListComponent } from './secure/common/message-list/message-list.
 
   ],
   providers: [
-    AuthGuardService
+    AuthGuardService,
+    GeolocationService
   ],
   bootstrap: [AppComponent]
 })
