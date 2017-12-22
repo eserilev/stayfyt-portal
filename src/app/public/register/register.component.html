@@ -1,14 +1,18 @@
 <div class = "logo">
   <img src="assets/images/stayfyt_logo.png">
 </div>
+
 <mat-card class="register-card">
   <form (ngSubmit)="createUser()">
     <mat-card-content>
       <div class="register-container">
-        <mat-horizontal-stepper [linear]="false">
-            <mat-step [stepControl]="selectUserType">              
-              <form>
-                  <ng-template matStepLabel>Welcome</ng-template>
+          
+        
+        <form>
+        <mat-vertical-stepper [linear]="false">
+            <mat-step label="Welcome">
+                  
+                  
                   <mat-form-field>
                     <mat-select placeholder="Who are you?" required>
                       <mat-option value="client">Client</mat-option>
@@ -16,17 +20,16 @@
                     </mat-select>
                   </mat-form-field>
                   <mat-form-field>
-                    <input matInput required placeholder="Zip Code">
-                  
+                      <input matInput required id="test" placeholder="Zip Code">
                   </mat-form-field>
+                 
                   <div class="nav-button-container">
                     <button mat-raised-button color="primary" matStepperNext>Next</button>
                   </div>
-              </form>
+             
           </mat-step>
-          <mat-step [stepControl]="selectBasicUserInfo">
-            <form>
-              <ng-template matStepLabel>Basic Information</ng-template>
+          <mat-step label="Basic Information" >
+              
               <mat-form-field>
                   <input matInput type="datetime" required placeholder="Date of Birth">
                 </mat-form-field>
@@ -44,11 +47,8 @@
                   <button mat-raised-button color="primary" matStepperNext>Next</button>
                   <button mat-button matStepperPrevious>Back</button>
               </div>
-            </form>
           </mat-step>
-          <mat-step [stepControl]="selectAdditionalInfo">
-              <form>
-                <ng-template matStepLabel>Additional Information</ng-template>
+          <mat-step label="Additional Information">
                 <mat-form-field>
                     <mat-select multiple placeholder="Workout types" required>
                         <mat-option value="cardio">Cardio</mat-option>
@@ -57,7 +57,7 @@
                       </mat-select>
                 </mat-form-field>
                 <mat-form-field>
-                  <input matInput required placeholder="Address" id="geolocationRegister">
+                  <input matInput required placeholder="Address" >
                 
                 </mat-form-field>
                 <mat-form-field>
@@ -67,12 +67,12 @@
             
                 <div class="nav-button-container">
 
-                    <button mat-raised-button color="primary" matStepperNext>Next</button>
+                    <button mat-raised-button color="primary">Finish</button>
                     <button mat-button matStepperPrevious>Back</button>
                 </div>
-              </form>
             </mat-step>
-        </mat-horizontal-stepper>
+        </mat-vertical-stepper>
+      </form>
        
       </div>
     </mat-card-content>
