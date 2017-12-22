@@ -1,3 +1,4 @@
+import { GeolocationService } from './../../services/geolocation.service';
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
 import {Router} from '@angular/router';
@@ -20,7 +21,7 @@ export class RegisterComponent implements OnInit {
     password_check: "",
   }
 
-  constructor(private _router: Router, )
+  constructor(private _router: Router, private geoService: GeolocationService )
   {
     this.router = _router;
   }
@@ -35,7 +36,9 @@ export class RegisterComponent implements OnInit {
 
 
   ngOnInit() {
-
+    var geolocationInput = document.getElementById('geolocationRegister');
+    console.log(geolocationInput);
+   // this.geoService.generateAddressAutofill(geolocationInput);
   }
 
   createUser() {
