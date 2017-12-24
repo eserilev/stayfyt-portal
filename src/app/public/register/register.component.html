@@ -3,13 +3,13 @@
 </div>
 
 <mat-card class="register-card">
-  <form (ngSubmit)="createUser()">
+  <form #f="ngForm"  (ngSubmit)="createUser()">
     <mat-card-content>
       <div class="register-container">
           
         
         <form>
-        <mat-vertical-stepper [linear]="false">
+        <mat-vertical-stepper>
             <mat-step label="Welcome">
                   
                   
@@ -20,7 +20,7 @@
                     </mat-select>
                   </mat-form-field>
                   <mat-form-field>
-                      <input matInput required id="test" placeholder="Zip Code">
+                      <input matInput id="address" placeholder="Zip Code" required >
                   </mat-form-field>
                  
                   <div class="nav-button-container">
