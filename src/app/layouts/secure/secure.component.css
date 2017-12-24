@@ -2,3 +2,11 @@
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
     }
+
+.logo-image{
+    background-size: cover;
+    /*
+    update this url before deploying
+    */
+    background-image: url('http://localhost:4200/assets/images/stayfyt_logo.png');
+}
