@@ -12,8 +12,8 @@
   float:right;
 
 }
-.register-card {
-    width: 50%;
+  mat-card {
+    width: 400px;
     display: block;
     margin: auto;
     position: fixed;

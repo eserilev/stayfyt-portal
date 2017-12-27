@@ -1,3 +1,4 @@
+import { AuthenticationService } from './services/authentication.service';
 
 import { GeolocationService } from './services/geolocation.service';
 
@@ -37,6 +38,8 @@ import { ClientComponent } from './secure/client/client.component';
 import { ClientSearchTrainerComponent } from './secure/client/client-search-trainer/client-search-trainer.component';
 import { ClientProfileComponent } from './secure/client/client-profile/client-profile.component';
 import { ClientTrainerListComponent } from './secure/client/client-trainer-list/client-trainer-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SchedulerService } from './services/scheduler.service';
 
 
 @NgModule({
@@ -68,7 +71,8 @@ import { ClientTrainerListComponent } from './secure/client/client-trainer-list/
     MaterialModule,
     AppRoutesModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
 
 
 
@@ -76,7 +80,9 @@ import { ClientTrainerListComponent } from './secure/client/client-trainer-list/
   ],
   providers: [
     AuthGuardService,
-    GeolocationService
+    GeolocationService,
+    SchedulerService,
+    AuthenticationService
   ],
   bootstrap: [AppComponent]
 })

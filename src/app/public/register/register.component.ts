@@ -1,5 +1,7 @@
+import { User } from './../../models/user.model';
+import { AuthenticationService } from './../../services/authentication.service';
 import { GeolocationService } from './../../services/geolocation.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
 import {Router} from '@angular/router';
 
@@ -10,20 +12,28 @@ import {Router} from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  form: FormGroup;
+
 //  username: FormControl;
 
   router: Router;
+  @ViewChild('f') form: any;
+  
 
-  formModel = {
-    username: "",
-    password: "",
-    password_check: "",
-  }
+  email: string;
+  password: string;
+  dob: string;
+  zip: string;
+  isTrainer: boolean;
+  confirmPassword: string;
+  firstName: string;
+  lastName: string;
 
-  constructor(private _router: Router, private geoService: GeolocationService )
-  {
-    this.router = _router;
+
+
+  constructor(private _router: Router, 
+    private geoService: GeolocationService, 
+    private authService: AuthenticationService) {
+      this.router = _router;
   }
 
   /*   constructor(
@@ -44,20 +54,25 @@ export class RegisterComponent implements OnInit {
 
 
   createUser() {
-    //   if (this.password !== this.password_check) {
-    //   return this.form.hasError('password') ? 'Passwords do not match' :
-    //    '';
-    // }
-    this.router.navigateByUrl('/trainer');
+    if(this.form.valid) {
+      var user = new User()
+      user.dob = new Date(this.dob);
+      user.email = this.email;
+      user.isTrainer = this.isTrainer;
+      user.password = this.password;
+      user.name = this.firstName + ' ' + this.lastName;
+  
+      console.log(user);
+      this.authService.register(user).subscribe((res) => {
+        console.log(res);
+        this.router.navigateByUrl('/trainer');
+      }, (err) => {
+        console.log(err);
+      });
+    }
+   
   }
 
-  getErrorMessage() {
-    return this.form.hasError('required') ? 'You must enter a username' :
-      this.form.hasError('email') ? 'Not a valid username' :
-        '';
-  }
-  get username() { return this.form.get('username'); }
-  get password() { return this.form.get('password'); }
-  get password_check() { return this.form.get('password_check'); }
+
 }
 

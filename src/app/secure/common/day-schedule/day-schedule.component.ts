@@ -13,3 +13,23 @@ export class DayScheduleComponent implements OnInit {
   }
 
 }
+
+var profile = {
+  firstName: "",
+  lastName: "",
+  phone: "",
+  isTrainer: "",
+  location : "locationObject",
+  username: "",
+  password: "",
+}
+
+var appt = 
+{
+  location: {lat: "", lng: "", city:"", state:"", zip:"", street:""} ,
+  client: "clientObject",
+  trainer: "trainerObjcet",
+  startTime:"10:00am",
+  endTime: "10:30am",
+  category: "yoga",
+}
