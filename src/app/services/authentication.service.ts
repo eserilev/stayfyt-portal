@@ -8,15 +8,25 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AuthenticationService {
 
+  public token: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    //var currentUser = JSON.parse(localStorage.getItem('token'));
+    //this.token = currentUser && currentUser.token;
+  }
 
   register(data: User):Observable<any> {
-    return this.http.post(environment.STAYFYT_API_URL + 'register', data)
+    /*
+    add this for autherized requests
+    let headers = new Headers({ 'Authorization': 'Bearer ' + this.authenticationService.token });
+    let options = new RequestOptions({ headers: headers });
+    */
+    console.log('hey');
+    return this.http.post(environment.STAYFYT_API_URL + 'register', data);
   }
 
   login(data: User):Observable<any> {
-    return this.http.post(environment.STAYFYT_API_URL + 'login', data)
+    return this.http.post(environment.STAYFYT_API_URL + 'login', data);
   }
 
 }

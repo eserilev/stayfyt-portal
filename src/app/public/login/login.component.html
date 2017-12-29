@@ -3,26 +3,34 @@
     <img mat-card-image src="assets/images/stayfyt_logo.png">
   </div>
   
-  <form (ngSubmit)="loginUser()">
+  <form #f="ngForm" (ngSubmit)="loginUser()">
     <mat-card-content>
         <div class="login-container">
              
           <div>
             <mat-form-field>
-              <input matInput 
-              placeholder="Username" 
-              [(ngModel)]="formModel.username"
-              name="username" 
-              required>
+              <input 
+                matInput 
+                name="email"
+                placeholder="Username" 
+                [(ngModel)]="email"
+                name="username" 
+                required
+              >
               <mat-icon matSuffix></mat-icon>
             </mat-form-field>
           </div>
               <br>
           <div>
             <mat-form-field>
-                <input matInput placeholder="Password" 
-                [type]="hide ? 'text' : 'password'" 
-                [(ngModel)]="formModel.password" name="password" required>
+                <input 
+                  matInput 
+                  name="password"
+                  placeholder="Password" 
+                  [type]="hide ? 'text' : 'password'" 
+                  [(ngModel)]="password" 
+                  required
+                >
                 <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>  
             </mat-form-field>
           </div>

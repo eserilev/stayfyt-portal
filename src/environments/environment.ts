@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  STAYFYT_API_URL: 'http://localhost:3000/api/'
+  STAYFYT_API_URL: 'http://localhost:3001/api/'
 };

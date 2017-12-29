@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { AuthenticationService } from './../../services/authentication.service';
+import { Component, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {Router} from '@angular/router';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'login',
@@ -9,27 +11,33 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent {
   //validation
-  form: FormGroup;
+  @ViewChild('f') form: any;
   
   //routing 
   router: Router;
 
-  // two way data-binding between view and controller
-  formModel = {
-    username: "",
-    password: "",
-  }
+  email: string;
+  password: string;
 
 
-  constructor(private _router: Router, ) 
+  constructor(private _router: Router, private authService: AuthenticationService ) 
   {
     this.router = _router;
     
   }
 
   loginUser() {
-    console.log(this.formModel.username);    
-    this.router.navigateByUrl('/trainer');  
+    var user = new User();
+    user.email = this.email;
+    user.password = this.password;
+    this.authService.login(user).subscribe((res) => {
+      console.log(res);
+      localStorage.setItem('token', res.token);
+      this.router.navigateByUrl('/trainer');
+     
+    }, (err) => {
+      console.log(err);
+    })
   }
   
   registerUser() {
@@ -42,8 +50,6 @@ export class LoginComponent {
         this.form.hasError('email') ? 'Not a valid username' :
             '';
   }
-  
-  get username() { return this.form.get('username'); }
-  get password() { return this.form.get('password'); }
+
   
 }
