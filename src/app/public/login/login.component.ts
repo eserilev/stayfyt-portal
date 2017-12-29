@@ -3,6 +3,8 @@ import { Component, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {Router} from '@angular/router';
 import { User } from '../../models/user.model';
+import {MatSnackBar} from '@angular/material';
+
 
 @Component({
   selector: 'login',
@@ -16,12 +18,18 @@ export class LoginComponent {
   //routing 
   router: Router;
 
+  action: string;
+
   email: string;
   password: string;
 
 
-  constructor(private _router: Router, private authService: AuthenticationService ) 
+  constructor(
+    public snackBar: MatSnackBar,
+    private _router: Router, 
+    private authService: AuthenticationService ) 
   {
+    this.action= "hide"
     this.router = _router;
     
   }
@@ -36,6 +44,7 @@ export class LoginComponent {
       this.router.navigateByUrl('/trainer');
      
     }, (err) => {
+      this.snackBar.open("Login Failed", this.action, { duration: 2000});
       console.log(err);
     })
   }
