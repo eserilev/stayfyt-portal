@@ -1,5 +1,15 @@
 <div style="margin-top:25px">
-  we will only show time slots that are booked
+  <mat-form-field>
+      <input 
+        matInput 
+        [matDatepicker]="picker" 
+        (dateInput)="addEvent('input', $event)" 
+        (dateChange)="addEvent('change', $event)" 
+        [matDatepickerFilter]="myFilter" 
+        placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
   <mat-list>
     <h3 mat-subheader>11:30am</h3>
     <mat-list-item>
