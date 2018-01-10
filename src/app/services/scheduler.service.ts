@@ -11,12 +11,11 @@ import 'rxjs/add/operator/map';
 export class SchedulerService {
 
   private baseUrl = environment.STAYFYT_API_URL + "session/"
+  
   constructor(private http: HttpClient) { }
 
   getSessions(userEmail: string): Observable<any> {
-    let params = new HttpParams();
-    params.append('email', 'new92');
-    return this.http.get(environment.STAYFYT_API_URL + "mySessions/", {params: {email: 'new92'}});
+    return this.http.get(this.baseUrl + "mySessions/new92" );
   }
 
   createSession() {

@@ -14,7 +14,7 @@ export class DayScheduleComponent implements OnInit {
 
   constructor(private schedService: SchedulerService) {
 
-    schedService.getSessions('test').subscribe(res => {
+    schedService.getSessions('new92').subscribe(res => {
 
       console.log(res);
     });
