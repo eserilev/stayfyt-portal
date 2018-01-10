@@ -48,7 +48,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     var geolocationInput = document.getElementById('address');
     console.log(geolocationInput);
-    this.geoService.generateAddressAutofill(geolocationInput);
+    //this.geoService.generateAddressAutofill(geolocationInput);
   }
 
 

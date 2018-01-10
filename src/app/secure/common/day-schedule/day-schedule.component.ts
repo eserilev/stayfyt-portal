@@ -1,3 +1,4 @@
+import { Session } from './../../../models/session.model';
 import { SchedulerService } from './../../../services/scheduler.service';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material';
@@ -10,13 +11,14 @@ import { MatDatepickerInputEvent } from '@angular/material';
 })
 export class DayScheduleComponent implements OnInit {
 
+  session: Array<Session>
   events: string[] = [];
 
   constructor(private schedService: SchedulerService) {
 
     schedService.getSessions('new92').subscribe(res => {
-
-      console.log(res);
+      this.session = res;
+      console.log(this.session);
     });
    }
 

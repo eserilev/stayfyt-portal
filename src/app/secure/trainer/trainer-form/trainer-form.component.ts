@@ -14,11 +14,11 @@ export class TrainerFormComponent implements OnInit {
 
     //generate address autofill
     var geolocationInput = document.getElementById('geolocationInput');
-    this.geoService.generateAddressAutofill(geolocationInput);
+   // this.geoService.generateAddressAutofill(geolocationInput);
 
     //generate road map
     var map = document.getElementById('map');
-    this.geoService.generateRoadMap(map);
+   // this.geoService.generateRoadMap(map);
   }
 
   submit(f: any) {
