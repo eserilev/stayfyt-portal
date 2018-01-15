@@ -11,26 +11,37 @@ import { MatDatepickerInputEvent } from '@angular/material';
 })
 export class DayScheduleComponent implements OnInit {
 
-  session: Array<Session>
+  sessions: Array<Session>;
+  currentSessions: Array<Session>;
   events: string[] = [];
 
   constructor(private schedService: SchedulerService) {
-
     schedService.getSessions('new92').subscribe(res => {
-      this.session = res;
-      console.log(this.session);
+      this.sessions = res;
     });
    }
 
   ngOnInit() {
   }
 
-  myFilter = (d: Date): boolean => {
-    //if session doesnt fall on date return false
-    console.log(d);
-    const day = d.getDay();
-    // Prevent Saturday and Sunday from being selected.
-    return day !== 0 && day !== 6;
+  myFilter = (d: Date): boolean => {  
+    if(!this.sessions)
+      return false;
+   
+    for(var i = 0; i < this.sessions.length; i++) {     
+      if(this.checkDate(d, this.sessions[i].start)) {      
+        return true;
+      }
+    }
+    return false;
+  }
+
+  checkDate = (d:Date, toCheck:Date): boolean => {
+    var check = new Date(toCheck.toString());
+    if(d.getTime() == check.getTime()) {
+        return true
+    }
+    return false;
   }
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
@@ -39,7 +50,21 @@ export class DayScheduleComponent implements OnInit {
 
   changeDate(event: MatDatepickerInputEvent<Date>) {
     var date = event.value;
+    console.log(date);
+    this.currentSessions = new Array<Session>();
+    for(var i = 0; i < this.sessions.length; i++) {
+      if(this.checkDate(date, this.sessions[i].start)) {
+        console.log(this.sessions[i]);
+        this.currentSessions.push(this.sessions[i]);
+      }
+    }
     //populate session list for current day
+  }
+
+  displayTime(d: Date): string {
+    var temp = new Date(d.toString());
+    var time = temp.toLocaleTimeString();
+    return time;
   }
 
 }

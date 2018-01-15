@@ -40,6 +40,8 @@ import { ClientProfileComponent } from './secure/client/client-profile/client-pr
 import { ClientTrainerListComponent } from './secure/client/client-trainer-list/client-trainer-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SchedulerService } from './services/scheduler.service';
+import { SearchUserComponent } from './secure/common/search-user/search-user.component';
+import { SearchService } from './services/search.service';
 
 
 @NgModule({
@@ -64,7 +66,8 @@ import { SchedulerService } from './services/scheduler.service';
     ClientProfileComponent,
     ClientComponent,
     ClientSearchTrainerComponent,
-    ClientTrainerListComponent
+    ClientTrainerListComponent,
+    SearchUserComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +85,8 @@ import { SchedulerService } from './services/scheduler.service';
     AuthGuardService,
     GeolocationService,
     SchedulerService,
-    AuthenticationService
+    AuthenticationService,
+    SearchService
   ],
   bootstrap: [AppComponent]
 })
