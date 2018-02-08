@@ -8,6 +8,7 @@ export class AuthGuardService implements CanActivate {
   constructor(private router: Router) { }
 
   canActivate() {
+    return true;
     //uncomment to get normal functionality
    /* if (localStorage.getItem('token')) {
       // logged in so return true
@@ -17,5 +18,6 @@ export class AuthGuardService implements CanActivate {
     // not logged in so redirect to login page
     this.router.navigate(['/login']);
     return false;
-    }
+    */
+  }
 }

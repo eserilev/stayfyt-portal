@@ -5,6 +5,6 @@
 
 export const environment = {
   production: false,
-  STAYFYT_API_URL: 'https://stayfyt-api.herokuapp.com/api/'//'http://localhost:3000/api/' //,
+  STAYFYT_API_URL: 'https://stayfyt-api.herokuapp.com/api/',//'http://localhost:3000/api/' //,
   stripeKey: 'pk_test_4yWO55r9XQrIIS3TbbDKn3jn'
 };

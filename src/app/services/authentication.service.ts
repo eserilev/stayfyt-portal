@@ -40,7 +40,12 @@ export class AuthenticationService {
   }
   // cw
   search(data: User): Observable<any> {
-     return this.http.get(environment.STAYFYT_API_URL + 'client-search', {params: JSON.stringify(data)});
+     return this.http.get(environment.STAYFYT_API_URL + 'client-search', {
+       params: {
+         email: data.email,
+         dob: data.dob.toString()
+       }
+     });
     // return this.http.get('url', JSON.stringify(data));
   }
 
