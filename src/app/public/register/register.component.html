@@ -6,12 +6,12 @@
         <img src="assets/images/stayfyt_logo.png">
       </div>
     <form #f="ngForm"  (ngSubmit)="createUser()">
-      <div class="register-container">     
-       
+      <div class="register-container">
+
         <mat-form-field>
-          <mat-select 
-            name="isTrainer" 
-            placeholder="Who are you?" 
+          <mat-select
+            name="isTrainer"
+            placeholder="Who are you?"
             [(ngModel)]="isTrainer"
             required>
               <mat-option value="false">Client</mat-option>
@@ -19,59 +19,59 @@
           </mat-select>
         </mat-form-field>
         <mat-form-field>
-            <input 
-              name="firstName" 
+            <input
+              name="firstName"
               matInput
-              required 
+              required
               [(ngModel)]="firstName"
               placeholder="First Name">
         </mat-form-field>
         <mat-form-field>
-            <input 
-              name="lastName" 
-              matInput 
-              required 
+            <input
+              name="lastName"
+              matInput
+              required
               [(ngModel)]="lastName"
               placeholder="Last Name">
         </mat-form-field>
         <mat-form-field>
-            <input 
-              name="dob" 
-              matInput type="datetime" 
-              required 
+            <input
+              name="dob"
+              matInput type="datetime"
+              required
               [(ngModel)]="dob"
               placeholder="Date of Birth">
         </mat-form-field>
         <mat-form-field>
-            <input 
-              name="email" 
-              matInput 
-              required 
+            <input
+              name="email"
+              matInput
+              required
               [(ngModel)]="email"
               placeholder="Email">
         </mat-form-field>
         <mat-form-field>
-          <input 
-            name="password" 
-            matInput 
-            required 
+          <input
+            name="password"
+            matInput
+            required
             [(ngModel)]="password"
             placeholder="Password">
         </mat-form-field>
         <mat-form-field>
-          <input 
-            name="confirmPassword" 
-            matInput 
+          <input
+            name="confirmPassword"
+            matInput
             required
             [(ngModel)]="confirmPassword"
             placeholder="Confirm Password">
-        </mat-form-field>           
+        </mat-form-field>
       </div>
 
       <button mat-raised-button color="primary" type="submit">Create Account</button>
-    </form> 
+    </form>
     </mat-card-content>
- 
+
 </mat-card>
 
 <div style="padding-top:200px;"></div>

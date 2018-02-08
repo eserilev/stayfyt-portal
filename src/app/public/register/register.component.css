@@ -1,7 +1,8 @@
-
+::-webkit-scrollbar {
+  display: none;
+}
 
 .logo{
-
 }
 
 .nav-button-container > {
@@ -14,6 +15,8 @@
 }
   mat-card {
     width: 400px;
+    height: 100%;
+    overflow-y: scroll;
     display: block;
     margin: auto;
     position: fixed;
@@ -25,5 +28,3 @@
   mat-form-field {
     width: 100%;
   }
-
- 

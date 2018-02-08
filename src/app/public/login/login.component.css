@@ -1,5 +1,5 @@
-body{
-    background-color: #EEEEEE;
+.body{
+    background-color:#F9AA1A;
 }
 
 .login-card {
@@ -17,4 +17,4 @@ body{
       margin: auto;
       width: 60%;
   }
-  
+

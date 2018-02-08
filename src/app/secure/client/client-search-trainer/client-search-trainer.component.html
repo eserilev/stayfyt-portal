@@ -1,3 +1,39 @@
-<p>
-  client-search-trainer works!
-</p>
+<form #f="ngForm"  (ngSubmit)="search()">
+  <mat-form-field class="example-full-width">
+    <input
+        name="trainerName"
+        matInput
+        placeholder="Trainer Name">
+      <!--  [(ngModel)]="trainerName"> -->
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-select
+        name="workoutType"
+        placeholder="Workout Types" >
+        <!--[(ngModel)]="workoutType"> -->
+      <mat-option value="yoga"> Yoga </mat-option>
+      <mat-option value="lifting"> Weightlifting </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-card-actions>
+    <button
+        mat-raised-button
+        color="primary"
+        type="submit">
+        Search
+    </button>
+  </mat-card-actions>
+</form>
+<!--
+<ion-content padding>
+  <mat-list>
+    <mat-item *ngFor="let t of trainers">
+      <ion-avatar item-left>
+        <img src="{{trainers.img}}">
+      </ion-avatar>
+      <h2>{{t.name}}</h2>
+      <p>Location: {{t.location}}, Workouts: {{t.workouts}}</p>
+    </mat-item>
+  </mat-list>
+</ion-content>
+!-->
