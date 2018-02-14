@@ -1,65 +1,11 @@
-<mat-card class="checkout">
-  <!--<div class = "logo">
-    <img mat-card-image src="assets/images/stayfyt_logo.png">
-  </div> -->
-  <mat-card-content>
-    <p>
-      Checkout
-    </p>
-    <form #f="ngForm" (ngSubmit)="checkout()">
-      <div class="checkout-container">
-        <mat-form-field>
-          <input
-            name="fullName"
-            matInput
-            required
-            [(ngModel)]="fullName"
-            placeholder="Full Name">
-        </mat-form-field>
-        <mat-form-field>
-        <input
-          name="cardNumber"
-          matInput
-          required
-          [(ngModel)]="cardNumber"
-          placeholder="Card Number">
-      </mat-form-field>
-        <mat-form-field>
-          <input
-            name="expDate"
-            matInput
-            required
-            [(ngModel)]="expDate"
-            placeholder="Expiration Date">
-        </mat-form-field>
-        <mat-form-field>
-          <input
-            name="cvc"
-            matInput
-            required
-            [(ngModel)]="cvc"
-            placeholder="CVC">
-        </mat-form-field>
-      </div>
-      <button mat-raised-button color="primary" type="submit">Make Payment</button>
-    </form>
-
-  </mat-card-content>
-
-  <form action="your-server-side-code" method="POST">
-    <script
-      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-      data-key="pk_test_4yWO55r9XQrIIS3TbbDKn3jn"
-      data-amount="999"
-      data-name="FYT Fitness on Your Time"
-      data-description="Example charge"
-      data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-      data-locale="auto"
-      data-zip-code="true">
-    </script>
-  </form>
-
-
-  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-  <script type="text/javascript" src="javascripts/checkout.js"></script>
-</mat-card>
+<form action="your-server-side-code" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_4yWO55r9XQrIIS3TbbDKn3jn"
+    data-amount="999"
+    data-name="StayFyt"
+    data-description="Schedule Session"
+    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+    data-locale="auto">
+  </script>
+</form>
