@@ -18,7 +18,7 @@ export class AuthenticationService {
 
   register(data: User): Observable<any> {
     /*
-    add this for autherized requests
+    add this for authorized requests
     let headers = new Headers({ 'Authorization': 'Bearer ' + this.authenticationService.token });
     let options = new RequestOptions({ headers: headers });
     */
@@ -37,16 +37,6 @@ export class AuthenticationService {
   constructor(private http: HttpClient) {
     // var currentUser = JSON.parse(localStorage.getItem('token'));
     // this.token = currentUser && currentUser.token;
-  }
-  // cw
-  search(data: User): Observable<any> {
-     return this.http.get(environment.STAYFYT_API_URL + 'client-search', {
-       params: {
-         email: data.email,
-         dob: data.dob.toString()
-       }
-     });
-    // return this.http.get('url', JSON.stringify(data));
   }
 
 }

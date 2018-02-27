@@ -1,0 +1,13 @@
+<form (ngSubmit)="checkout()">
+ <!-- <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_4yWO55r9XQrIIS3TbbDKn3jn"
+    data-amount= price
+    data-name="StayFyt"
+    data-description="Schedule Session"
+    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+    data-locale="auto">
+  </script> -->
+  <button (click)="checkout()">Purchase</button>
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+</form>

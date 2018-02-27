@@ -7,5 +7,5 @@ export class User {
     friends: Array<User>;
     isAdmin: boolean;
     isTrainer: boolean;
-    
+    rate: number;
 }

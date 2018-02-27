@@ -42,6 +42,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { SchedulerService } from './services/scheduler.service';
 import { SearchUserComponent } from './secure/common/search-user/search-user.component';
 import { SearchService } from './services/search.service';
+import { ClientPaymentComponent } from './secure/client/client-payment/client-payment.component';
+import {PaymentService} from './services/payment.service';
 
 
 @NgModule({
@@ -67,7 +69,8 @@ import { SearchService } from './services/search.service';
     ClientComponent,
     ClientSearchTrainerComponent,
     ClientTrainerListComponent,
-    SearchUserComponent
+    SearchUserComponent,
+    ClientPaymentComponent
   ],
   imports: [
     BrowserModule,
@@ -86,7 +89,8 @@ import { SearchService } from './services/search.service';
     GeolocationService,
     SchedulerService,
     AuthenticationService,
-    SearchService
+    SearchService,
+    PaymentService
   ],
   bootstrap: [AppComponent]
 })
